@@ -7,7 +7,7 @@
     <!-- Push (Android 13+): permiso para mostrar notificaciones -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <application
-        android:label="AgroLink"
+        android:label="AgroLite"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <!-- Canal y ícono por defecto de las notificaciones push (el canal se crea en MainActivity) -->
