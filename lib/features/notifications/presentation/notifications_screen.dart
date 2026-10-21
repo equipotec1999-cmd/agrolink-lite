@@ -100,9 +100,9 @@ class _Tile extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 10, left: 4),
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: n.read ? AppColors.cream : AppColors.surface,
+          color: n.read ? AppColors.cream : Colors.white,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: n.read ? AppColors.line : AppColors.forest),
+          border: Border.all(color: n.read ? AppColors.line : Colors.white),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

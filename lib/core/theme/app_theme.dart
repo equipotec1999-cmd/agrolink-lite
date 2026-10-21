@@ -7,14 +7,14 @@ import 'app_text.dart';
 ThemeData buildAppTheme() {
   final scheme = ColorScheme.fromSeed(
     seedColor: AppColors.forest,
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
   ).copyWith(
     primary: AppColors.forest,
     onPrimary: Colors.white,
     secondary: AppColors.lime,
     onSecondary: AppColors.ink,
     surface: AppColors.cream,
-    onSurface: AppColors.text,
+    onSurface: AppColors.ink,
     error: AppColors.danger,
   );
 

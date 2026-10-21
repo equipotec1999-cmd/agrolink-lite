@@ -307,7 +307,7 @@ class _SearchLauncher extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(Icons.search_rounded, color: AppColors.text),
+            const Icon(Icons.search_rounded, color: AppColors.ink),
             const SizedBox(width: 12),
             const Expanded(
               child: Text(
