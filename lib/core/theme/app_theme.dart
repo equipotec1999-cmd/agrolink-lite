@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
@@ -18,7 +17,7 @@ ThemeData buildAppTheme() {
     error: AppColors.danger,
   );
 
-  const cupertino = CupertinoPageTransitionsBuilder();
+  const cupertino = _InstantTransitions();
 
   return ThemeData(
     useMaterial3: true,
@@ -36,4 +35,15 @@ ThemeData buildAppTheme() {
       },
     ),
   );
+}
+
+/// Lite: cambio de pantalla instantáneo (sin animación de deslizamiento).
+class _InstantTransitions extends PageTransitionsBuilder {
+  const _InstantTransitions();
+
+  @override
+  Widget buildTransitions<T>(PageRoute<T> route, BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation, Widget child) {
+    return child;
+  }
 }

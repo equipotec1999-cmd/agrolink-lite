@@ -44,7 +44,7 @@ dev_dependencies:
   # Solo corre cuando tú lo invocas: `dart run flutter_launcher_icons`.
   flutter_launcher_icons: ^0.14.4
 
-# Ícono de la app: emblema oficial en hueso sobre verde carbón.
+# Ícono de la app: emblema negro sobre fondo blanco (Lite).
 # Lite: las imágenes fuente viven en tool/icon/ (fuera de assets/) para que NO se empaqueten
 # dentro del APK; solo se usan cuando corres `dart run flutter_launcher_icons`.
 # En Android 8+ se usa el ícono "adaptativo" (fondo + primer plano por separado,
@@ -53,7 +53,7 @@ flutter_launcher_icons:
   android: true
   ios: true
   image_path: "tool/icon/app_icon.png"
-  adaptive_icon_background: "#1E2420"
+  adaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: "tool/icon/app_icon_foreground.png"
   min_sdk_android: 21
   remove_alpha_ios: true
@@ -68,24 +68,11 @@ flutter:
     - assets/brand/glyphs/
 
   fonts:
-    # Serif de inscripción para titulares (rediseño rústico). OFL, ver OFL-Cinzel.txt.
-    - family: Cinzel
-      fonts:
-        - asset: assets/fonts/Cinzel-600.ttf
-          weight: 600
-        - asset: assets/fonts/Cinzel-700.ttf
-          weight: 700
-        - asset: assets/fonts/Cinzel-800.ttf
-          weight: 800
     - family: PlusJakartaSans
       fonts:
         - asset: assets/fonts/PlusJakartaSans-400.ttf
           weight: 400
-        - asset: assets/fonts/PlusJakartaSans-500.ttf
-          weight: 500
         - asset: assets/fonts/PlusJakartaSans-600.ttf
           weight: 600
         - asset: assets/fonts/PlusJakartaSans-700.ttf
           weight: 700
-        - asset: assets/fonts/PlusJakartaSans-800.ttf
-          weight: 800

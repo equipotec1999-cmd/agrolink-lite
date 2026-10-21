@@ -10,7 +10,7 @@ import 'app_colors.dart';
 /// como rótulo grabado sin tener que escribirlos en mayúsculas en el código.
 /// A diferencia de la fuente anterior, necesita espaciado POSITIVO entre letras.
 abstract final class AppText {
-  static const display = 'Cinzel';
+  static const display = 'PlusJakartaSans';
   static const body = 'PlusJakartaSans';
 
   static const hero = TextStyle(
@@ -18,7 +18,7 @@ abstract final class AppText {
     fontSize: 30,
     fontWeight: FontWeight.w700,
     height: 1.15,
-    letterSpacing: 0.6,
+    letterSpacing: -0.2,
     color: AppColors.ink,
   );
   static const h1 = TextStyle(
@@ -26,7 +26,7 @@ abstract final class AppText {
     fontSize: 25,
     fontWeight: FontWeight.w700,
     height: 1.15,
-    letterSpacing: 0.8,
+    letterSpacing: -0.3,
     color: AppColors.ink,
   );
   static const h2 = TextStyle(
@@ -34,7 +34,7 @@ abstract final class AppText {
     fontSize: 20,
     fontWeight: FontWeight.w700,
     height: 1.2,
-    letterSpacing: 0.6,
+    letterSpacing: -0.2,
     color: AppColors.ink,
   );
   static const h3 = TextStyle(
@@ -42,7 +42,7 @@ abstract final class AppText {
     fontSize: 16,
     fontWeight: FontWeight.w700,
     height: 1.2,
-    letterSpacing: 0.6,
+    letterSpacing: -0.1,
     color: AppColors.ink,
   );
   // Precio en sans: los números en Cinzel son bonitos pero más lentos de leer.
@@ -90,7 +90,7 @@ abstract final class AppText {
     fontFamily: display,
     fontSize: 11.5,
     fontWeight: FontWeight.w700,
-    letterSpacing: 2.2,
+    letterSpacing: 1.2,
     color: AppColors.muted,
   );
 }

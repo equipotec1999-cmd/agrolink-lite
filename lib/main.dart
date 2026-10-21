@@ -7,7 +7,6 @@ import 'app.dart';
 import 'core/network/api_client.dart';
 import 'core/network/token_storage.dart';
 import 'core/push/push_service.dart';
-import 'core/theme/app_colors.dart';
 import 'core/theme/app_text.dart';
 import 'features/admin/data/compliance_rules_repository.dart';
 import 'features/auth/application/auth_controller.dart';
@@ -120,24 +119,24 @@ class _BootErrorApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: AppColors.ink,
+        backgroundColor: Colors.white,
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(32),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const AgroLinkMark(size: 96, color: AppColors.bone),
+                const AgroLinkMark(size: 96, color: Colors.black),
                 const SizedBox(height: 22),
                 Text(
                   'No pudimos conectar con AgroLink',
-                  style: AppText.h3.copyWith(color: AppColors.bone),
+                  style: AppText.h3.copyWith(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Text(
                   '$error',
-                  style: AppText.muted.copyWith(color: AppColors.bone.withValues(alpha: 0.6)),
+                  style: AppText.muted.copyWith(color: Colors.black54),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
@@ -145,8 +144,8 @@ class _BootErrorApp extends StatelessWidget {
                 // app (por eso antes salía el morado default de Material).
                 FilledButton.icon(
                   style: FilledButton.styleFrom(
-                    backgroundColor: AppColors.lime,
-                    foregroundColor: AppColors.ink,
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   onPressed: onRetry,
@@ -172,22 +171,22 @@ class _BootLoadingApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: AppColors.ink,
+        backgroundColor: Colors.white,
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const AgroLinkMark(size: 140, color: AppColors.bone),
+              const AgroLinkMark(size: 140, color: Colors.black),
               const SizedBox(height: 28),
               SizedBox(
                 width: 22,
                 height: 22,
-                child: CircularProgressIndicator(strokeWidth: 2, color: AppColors.bone.withValues(alpha: 0.6)),
+                child: CircularProgressIndicator(strokeWidth: 2, color: Colors.black54),
               ),
               const SizedBox(height: 14),
               Text(
                 'Conectando…',
-                style: AppText.muted.copyWith(color: AppColors.bone.withValues(alpha: 0.6)),
+                style: AppText.muted.copyWith(color: Colors.black54),
               ),
             ],
           ),

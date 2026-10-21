@@ -26,7 +26,7 @@ App móvil del marketplace agropecuario **AgroLink** para México. Flutter + Riv
 - **Moderación**: cola de publicaciones, reportes, verificación de vendedores (para cuentas con permiso).
 - **Reglas de cumplimiento**: catálogo administrable (solo para cuentas con permiso).
 - **Notificaciones push** con Firebase.
-- **Diseño propio**: paleta cálida (bone/ink/lime), tipografías Cinzel y Plus Jakarta Sans, glifos de categoría con los símbolos de la marca.
+- **Diseño propio**: paleta cálida (bone/ink/lime), tipografía Plus Jakarta Sans, glifos de categoría con los símbolos de la marca.
 
 ## Correrla
 
@@ -94,7 +94,7 @@ Cada feature sigue `domain` → `data` (interfaz + implementación) → `applica
 ## Diseño
 
 - **Paleta** cálida: `bone` (fondo), `ink` (texto), `lime` (acento), `cream` (botones secundarios), `clay` (avisos). Rojo y verde para error y éxito.
-- **Tipografías**: Cinzel para titulares (`AppText.hero/h1/h2/h3/overline`); Plus Jakarta Sans para precios y lectura.
+- **Tipografías**: Plus Jakarta Sans en todo (Lite no empaqueta Cinzel).
 - **Glifos** PNG blancos con transparencia, teñidos en código con `BlendMode.srcIn` (`CategoryGlyph`).
 - **Logo** oficial en `assets/brand/`.
 
@@ -107,3 +107,9 @@ dart run flutter_launcher_icons
 ```
 
 Después hay que reinstalar la app (`flutter run`), no basta hot restart.
+
+### Lite: qué cambia a propósito
+- Sin animaciones de entrada, escala al tocar, esqueletos pulsantes ni transiciones de página.
+- Barra inferior plana (sin pastilla flotante ni sombras) y arranque estático.
+- Una sola familia tipográfica (se quitaron Cinzel y 2 pesos de Plus Jakarta Sans de los assets).
+- Ícono: logo negro sobre fondo blanco; paquete `mx.agrolink.lite`, nombre AgroLite.

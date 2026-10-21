@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -68,50 +67,25 @@ class _AgroNavBar extends ConsumerWidget {
               Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: Icon(
-                      icon,
-                      size: 23,
-                      color: active ? AppColors.lime : AppColors.bone.withValues(alpha: 0.45),
-                    ),
-                  ),
+                  Icon(icon, size: 24, color: active ? AppColors.ink : AppColors.muted),
                   if (i == 2 && unread > 0)
                     Positioned(
-                      right: -2,
+                      right: -6,
                       top: -4,
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-                        decoration: BoxDecoration(
-                          color: AppColors.clay,
-                          borderRadius: BorderRadius.circular(6),
-                          border: Border.all(color: AppColors.ink, width: 1.5),
-                        ),
-                        child: Text(
-                          '$unread',
-                          style: AppText.label.copyWith(color: Colors.white, fontSize: 10),
-                        ),
+                        decoration: BoxDecoration(color: AppColors.clay, borderRadius: BorderRadius.circular(6)),
+                        child: Text('$unread', style: AppText.label.copyWith(color: Colors.white, fontSize: 10)),
                       ),
                     ),
                 ],
               ),
-              const SizedBox(height: 2),
-              AnimatedDefaultTextStyle(
-                duration: const Duration(milliseconds: 220),
+              const SizedBox(height: 3),
+              Text(
+                label,
                 style: AppText.label.copyWith(
                   fontSize: 10.5,
-                  color: active ? AppColors.bone : AppColors.bone.withValues(alpha: 0.45),
-                ),
-                child: Text(label),
-              ),
-              const SizedBox(height: 4),
-              // Rombito bajo la pestaña activa (motivo ◇ del logo).
-              AnimatedOpacity(
-                duration: const Duration(milliseconds: 220),
-                opacity: active ? 1 : 0,
-                child: Transform.rotate(
-                  angle: 0.785398,
-                  child: Container(width: 5, height: 5, color: AppColors.lime),
+                  color: active ? AppColors.ink : AppColors.muted,
                 ),
               ),
             ],
@@ -120,30 +94,23 @@ class _AgroNavBar extends ConsumerWidget {
       );
     }
 
+    // Lite: barra plana de borde a borde (sin pastilla flotante, sin sombra).
     return SafeArea(
       top: false,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
-        child: Container(
-          height: 76,
-          padding: const EdgeInsets.symmetric(horizontal: 6),
-          decoration: BoxDecoration(
-            color: AppColors.ink,
-            borderRadius: BorderRadius.circular(20),
-            // Sombra corta y tenue: solo separa la barra del contenido que pasa por debajo.
-            boxShadow: [
-              BoxShadow(color: AppColors.ink.withValues(alpha: 0.18), blurRadius: 12, offset: const Offset(0, 4)),
-            ],
-          ),
-          child: Row(
-            children: [
-              item(0),
-              item(1),
-              _PublishButton(onTap: onPublish),
-              item(2),
-              item(3),
-            ],
-          ),
+      child: Container(
+        height: 58,
+        decoration: const BoxDecoration(
+          color: AppColors.surface,
+          border: Border(top: BorderSide(color: AppColors.line)),
+        ),
+        child: Row(
+          children: [
+            item(0),
+            item(1),
+            _PublishButton(onTap: onPublish),
+            item(2),
+            item(3),
+          ],
         ),
       ),
     );
@@ -159,19 +126,15 @@ class _PublishButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6),
       child: Pressable(
-        scale: 0.88,
-        onTap: () {
-          HapticFeedback.mediumImpact();
-          onTap();
-        },
+        onTap: onTap,
         child: Container(
-          width: 54,
-          height: 54,
+          width: 44,
+          height: 36,
           decoration: BoxDecoration(
-            color: AppColors.bone,
-            borderRadius: BorderRadius.circular(14),
+            color: AppColors.ink,
+            borderRadius: BorderRadius.circular(10),
           ),
-          child: const Icon(Icons.add_rounded, color: AppColors.ink, size: 30),
+          child: const Icon(Icons.add_rounded, color: AppColors.bone, size: 26),
         ),
       ),
     );
