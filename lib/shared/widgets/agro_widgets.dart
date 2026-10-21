@@ -203,13 +203,13 @@ class AgroChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (emoji != null) ...[
-              CategoryGlyph(value: emoji!, size: 15, color: selected ? AppColors.lime : AppColors.ink),
+              CategoryGlyph(value: emoji!, size: 15, color: selected ? AppColors.lime : AppColors.text),
               const SizedBox(width: 6),
             ],
             Text(
               label,
               style: AppText.label.copyWith(
-                color: selected ? AppColors.lime : AppColors.ink,
+                color: selected ? AppColors.lime : AppColors.text,
                 fontSize: dense ? 12 : 13,
               ),
             ),

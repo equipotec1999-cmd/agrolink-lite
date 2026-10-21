@@ -231,7 +231,13 @@ class _Header extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hola, $name', style: AppText.title, overflow: TextOverflow.ellipsis),
+              Row(
+                children: [
+                  Flexible(child: Text('Hola, $name', style: AppText.title, overflow: TextOverflow.ellipsis)),
+                  const SizedBox(width: 8),
+                  const _LiteBadge(),
+                ],
+              ),
               const SizedBox(height: 2),
               const Row(
                 children: [
@@ -259,6 +265,29 @@ class _Header extends ConsumerWidget {
   }
 }
 
+/// Sello de la edición Lite: se ve en la pantalla principal junto con la paleta invertida.
+class _LiteBadge extends StatelessWidget {
+  const _LiteBadge();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(color: AppColors.lime, borderRadius: BorderRadius.circular(6)),
+      child: const Text(
+        'LITE',
+        style: TextStyle(
+          fontFamily: AppText.body,
+          fontSize: 10.5,
+          fontWeight: FontWeight.w800,
+          letterSpacing: 1.2,
+          color: AppColors.ink,
+        ),
+      ),
+    );
+  }
+}
+
 class _SearchLauncher extends StatelessWidget {
   const _SearchLauncher({required this.onTap});
   final VoidCallback onTap;
@@ -278,7 +307,7 @@ class _SearchLauncher extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(Icons.search_rounded, color: AppColors.ink),
+            const Icon(Icons.search_rounded, color: AppColors.text),
             const SizedBox(width: 12),
             const Expanded(
               child: Text(
