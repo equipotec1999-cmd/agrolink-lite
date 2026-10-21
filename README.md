@@ -12,7 +12,7 @@ App móvil del marketplace agropecuario **AgroLink** para México. Flutter + Riv
 - **APK más chico:** las imágenes fuente del ícono ya no se empaquetan dentro de la app (viven en `tool/icon/`).
 - **Menos datos:** el servidor comprime las respuestas y el feed trae solo la foto de portada de cada tarjeta.
 - Para regenerar el ícono: `dart run flutter_launcher_icons` (lee de `tool/icon/`).
-- Apunta a la API que definas con `--dart-define=API_BASE_URL=https://TU-API/api`. Funciona con la API oficial y con `agrolink-lite-api`.
+- Por defecto apunta a la API en Render (`https://agrolink-api-wug5.onrender.com/api`). Puedes cambiarla con `--dart-define=API_BASE_URL=https://TU-API/api`; funciona con `agrolink-api` y con `agrolink-lite-api`.
 
 ## Qué incluye
 
